@@ -6,10 +6,10 @@
 using namespace std;
 
 int main() {
-    ClothList *list1 = createClothList(); // Initialize the cloth list
+    ClothList *list1 = createClothList();
 
     int user_choice;
-    load_from_csv(list1, "data/clothes.csv"); // Load initial data from CSV
+    load_from_csv(list1, "data/clothes.csv");
 
     do{
         cout<<"================================================"<<endl;
@@ -27,7 +27,7 @@ int main() {
         }
     }while(user_choice != 0);
 
-    save_to_csv(list1, "data/clothes.csv"); // Save data back to CSV before exiting
+    save_to_csv(list1, "data/clothes.csv");
 
     return 0;
 }

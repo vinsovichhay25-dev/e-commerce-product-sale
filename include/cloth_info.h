@@ -18,6 +18,7 @@ struct ClothInfo {
     float cloth_rating;
     string cloth_promotion;
     ClothInfo *next;
+    ClothInfo *prev;
 };
 
 struct ClothList{
