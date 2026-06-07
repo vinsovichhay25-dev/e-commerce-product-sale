@@ -10,3 +10,4 @@ cloth_id, name, brand, category, size,color, material, price, stock_quantity, ra
 8,Shorts, Nike, Bottomwear, M, Green, Cotton, 22.50, 35, 4.2, 12% OFF
 9,Shirt, Gucci, Topwear, L, White, Silk, 120.00, 10, 4.9, 10% OFF
 10,Tracksuit, Adidas, Sportswear, XL, Blue, Polyester, 70.00, 22, 4.5, 18% OFF
+11, Jean, Ten11, Men, L, Red, Cotton, 50, 24, 4.2, 10% OFF
