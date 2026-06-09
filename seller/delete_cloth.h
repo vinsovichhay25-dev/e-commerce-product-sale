@@ -2,6 +2,7 @@
 #define DELETE_CLOTH_H
 
 #include "../include/cloth_info.h"
+#include "../include/fileio.h"
 
 #include <iostream>
 using namespace std;

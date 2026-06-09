@@ -3,6 +3,7 @@
 
 #include "cloth_info.h"
 #include <fstream>
+#include <string.h>
 #include <sstream>
 #include <iostream>
 using namespace std;
@@ -17,38 +18,44 @@ void load_from_csv(ClothList *list, const string &filename) {
     string line;
 
     getline(file, line);
-    stringstream ss(line);
 
-    ClothInfo *newCloth = new ClothInfo;
+    while(getline(file, line)){
 
-    getline(ss, newCloth->cloth_id, ',');
-    getline(ss, newCloth->cloth_name, ',');
-    getline(ss, newCloth->cloth_brand, ',');
-    getline(ss, newCloth->cloth_category, ',');
-    getline(ss, newCloth->cloth_size, ',');
-    getline(ss, newCloth->cloth_color, ',');
-    getline(ss, newCloth->cloth_material, ',');
+        stringstream ss(line);
 
-    string price_str, stock_str, rating_str;
-    getline(ss, price_str, ',');
-    getline(ss, stock_str, ',');
-    getline(ss, rating_str, ',');
+        ClothInfo *newCloth = new ClothInfo;
 
-    newCloth->cloth_price = stof(price_str);
-    newCloth->cloth_stock_quantity = stoi(stock_str);
-    newCloth->cloth_rating = stof(rating_str);
+        getline(ss, newCloth->cloth_id, ',');
+        getline(ss, newCloth->cloth_name, ',');
+        getline(ss, newCloth->cloth_brand, ',');
+        getline(ss, newCloth->cloth_category, ',');
+        getline(ss, newCloth->cloth_size, ',');
+        getline(ss, newCloth->cloth_color, ',');
+        getline(ss, newCloth->cloth_material, ',');
 
-    getline(ss, newCloth->cloth_promotion, ',');
-    newCloth->next = nullptr;
-    newCloth->prev = list->tail;
+        string price_str, stock_str, rating_str;
 
-    if(list->tail != nullptr){
-        list->tail->next = newCloth;
-    }else{
-        list->head = newCloth;
+        getline(ss, price_str, ',');
+        getline(ss, stock_str, ',');
+        getline(ss, rating_str, ',');
+
+        newCloth->cloth_price = stof(price_str);
+        newCloth->cloth_stock_quantity = stoi(stock_str);
+        newCloth->cloth_rating = stof(rating_str);
+
+        getline(ss, newCloth->cloth_promotion);
+
+        newCloth->next = nullptr;
+        newCloth->prev = list->tail;
+
+        if(list->tail != nullptr){
+            list->tail->next = newCloth;
+        }else{
+            list->head = newCloth;
+        }
+        list->tail = newCloth;
+        list->size++;
     }
-    list->tail = newCloth;
-    list->size++;
 
     file.close();
 }
@@ -57,7 +64,7 @@ void load_from_csv(ClothList *list, const string &filename) {
     ofstream file(filename);
 
     if (!file.is_open()) {
-        cout << "Error opening file: " << filename << endl;
+        cout<<"Error opening file: "<<filename<<endl;
         return;
     }
 
@@ -80,4 +87,5 @@ void load_from_csv(ClothList *list, const string &filename) {
     }
     file.close();
 }
+
 #endif

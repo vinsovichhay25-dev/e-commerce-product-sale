@@ -1,31 +1,8 @@
-cloth_id,cloth_name,cloth_brand,cloth_category,cloth_size,cloth_color,cloth_material,cloth_price,cloth_stock_quantity,cloth_rating,cloth_promotion
-C001,Oversized Cotton T-Shirt,Nike,T-Shirt,L,Black,Cotton,19.99,50,4.5,10%
-C002,Slim Fit Polo Shirt,Adidas,Polo Shirt,M,White,Cotton,24.99,40,4.3,15%
-C003,Classic Denim Jacket,Levis,Jacket,L,Blue,Denim,59.99,25,4.8,20%
+C003,Sport Jacket,Adidas,Jacket,XL,Black,Polyester,69.99,30,4.6,15%
 C004,Hooded Sweatshirt,Puma,Hoodie,XL,Gray,Fleece,39.99,35,4.6,10%
-C005,Cargo Pants,Uniqlo,Pants,L,Khaki,Cotton,34.99,30,4.4,5%
-C006,Skinny Jeans,Zara,Jeans,M,Dark Blue,Denim,44.99,28,4.2,15%
-C007,Athletic Shorts,Nike,Shorts,M,Black,Polyester,22.99,60,4.7,10%
-C008,Flannel Shirt,H&M,Shirt,L,Red,Cotton,29.99,45,4.3,20%
-C009,Formal Dress Shirt,Ralph Lauren,Shirt,M,Light Blue,Cotton,49.99,20,4.8,25%
-C010,Graphic T-Shirt,Champion,T-Shirt,S,White,Cotton,17.99,55,4.1,5%
-C011,Winter Parka,North Face,Jacket,XL,Navy,Polyester,129.99,15,4.9,30%
-C012,Chino Pants,Gap,Pants,M,Beige,Cotton,39.99,32,4.4,10%
-C013,V-Neck Sweater,Tommy Hilfiger,Sweater,L,Gray,Wool,54.99,18,4.5,15%
-C014,Track Jacket,Adidas,Jacket,M,Black,Polyester,49.99,22,4.6,20%
-C015,Jogger Pants,Puma,Pants,L,Gray,Cotton Blend,31.99,40,4.3,10%
-C016,Linen Shirt,Uniqlo,Shirt,M,White,Linen,27.99,35,4.4,15%
-C017,Bomber Jacket,Zara,Jacket,L,Olive,Polyester,69.99,16,4.7,25%
-C018,Sports Tank Top,Nike,Tank Top,M,Blue,Polyester,18.99,50,4.2,5%
-C019,Casual Blazer,H&M,Blazer,L,Navy,Cotton Blend,79.99,12,4.5,20%
-C020,Relaxed Fit Jeans,Levis,Jeans,XL,Black,Denim,49.99,24,4.8,15%
-C021,Crew Neck T-Shirt,Uniqlo,T-Shirt,M,Green,Cotton,14.99,70,4.4,10%
-C022,Leather Jacket,Zara,Jacket,L,Brown,Faux Leather,99.99,10,4.7,30%
-C023,Pleated Skirt,H&M,Skirt,S,Pink,Polyester,29.99,26,4.3,20%
-C024,Maxi Dress,Mango,Dress,M,Floral,Rayon,59.99,18,4.6,25%
-C025,Cardigan Sweater,Gap,Sweater,L,Cream,Wool Blend,44.99,20,4.4,15%
-C026,Running Leggings,Adidas,Leggings,M,Black,Spandex,34.99,38,4.7,10%
-C027,Crop Top,Zara,Top,S,Yellow,Cotton,19.99,42,4.2,5%
-C028,Business Trousers,Ralph Lauren,Trousers,L,Charcoal,Wool Blend,64.99,14,4.8,20%
-C029,Printed Hoodie,Champion,Hoodie,XL,Maroon,Fleece,42.99,30,4.5,15%
-C030,Long Sleeve Henley,Tommy Hilfiger,Shirt,M,Navy,Cotton,32.99,27,4.4,10%
+C005,Casual Polo Shirt,Ralph Lauren,Polo,M,Green,Cotton,29.99,60,4.8,5%
+C006,Running Shorts,Nike,Shorts,L,Red,Polyester,24.99,80,4.4,0%
+C007,Winter Coat,Uniqlo,Coat,XXL,Navy,Wool,89.99,20,4.9,20%
+C008,Graphic Tee,Zara,T-Shirt,S,Black,Cotton,17.99,70,4.3,0%
+C009,Denim Jacket,Levi's,Jacket,L,Blue,Denim,59.99,25,4.7,10%
+C010,Training Hoodie,Under Armour,Hoodie,M,Dark Grey,Fleece,44.99,45,4.5,12%

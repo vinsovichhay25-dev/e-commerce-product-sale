@@ -19,12 +19,14 @@ void seller_menu(ClothList *seller){
     int seller_choice;
 
     do{
-        cout<<"\n\tWelcome to the Seller's Page!"<<endl;
+        cout<<"\n\tWelcome to the Seller's Page!\n\n";
 
         cout<<"==============================================="<<endl;
         cout<<"              SELLER MENU"<<endl;
         cout<<"==============================================="<<endl;
 
+        cout<<endl;
+        
         cout<<"1. Add Cloth"<<endl;
         cout<<"2. Display Clothes"<<endl;
         cout<<"3. Update Cloth"<<endl;
@@ -33,9 +35,8 @@ void seller_menu(ClothList *seller){
         cout<<"6. Restock Cloth"<<endl;
         cout<<"7. Inventory Report"<<endl;
         cout<<"0. Back to Main Menu"<<endl;
-        cout<<"Enter your choice: "; cin>>seller_choice;
+        cout<<"\nEnter your choice: "; cin>>seller_choice;
         
-
         switch(seller_choice){
             case 1: add_cloth(seller); break;
             case 2: display_clothes(seller); break;

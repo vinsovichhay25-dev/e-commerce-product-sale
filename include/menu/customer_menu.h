@@ -35,7 +35,7 @@ void customer_menu(ClothList *list){
         cout<<"8. Checkout"<<endl;
         cout<<"0. Back to Main Menu"<<endl;
 
-        cout<<"Enter your choice: ";   cin>>customer_choice;
+        cout<<"\nEnter your choice: ";   cin>>customer_choice;
     
         switch(customer_choice){
             case 1: view_clothes(list); break;
