@@ -6,10 +6,11 @@
 using namespace std;
 
 int main() {
-    ClothList *list1 = createClothList();
+    ClothList *seller = createClothList();
+    ClothList *customer = createClothList();
 
     int user_choice;
-    load_from_csv(list1, "data/clothes.csv");
+    load_from_csv(seller, "data/clothes.csv");
 
     do{
         cout<<"================================================"<<endl;
@@ -20,14 +21,14 @@ int main() {
         cout<<"Enter your choice: "; cin>>user_choice;
 
         switch(user_choice){
-            case 1: seller_menu(list1); break;
-            case 2: customer_menu(list1); break;
+            case 1: seller_menu(seller); break;
+            case 2: customer_menu(customer); break;
             case 0: cout<<"Exiting the program. Goodbye!"<<endl; break;
             default: cout<<"\tInvalid choice. Please try again."<<endl;
         }
     }while(user_choice != 0);
 
-    save_to_csv(list1, "data/clothes.csv");
+    save_to_csv(seller, "data/clothes.csv");
 
     return 0;
 }

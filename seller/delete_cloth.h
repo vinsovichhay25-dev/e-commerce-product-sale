@@ -6,8 +6,11 @@
 #include <iostream>
 using namespace std;
 
-void delete_cloth(ClothList *list){
+void delete_cloth(ClothList *seller){
     
+
+    save_to_csv(seller, "data/clothes.csv");
+
 }
 
 #endif

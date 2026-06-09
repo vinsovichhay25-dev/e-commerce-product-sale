@@ -6,8 +6,10 @@
 #include <iostream>
 using namespace std;
 
-void restock_cloth(ClothList *list){
+void restock_cloth(ClothList *seller){
     
+
+    save_to_csv(seller, "data/clothes.csv");
 }
 
 #endif

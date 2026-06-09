@@ -6,7 +6,7 @@
 #include <iostream>
 using namespace std;
 
-void display_clothes(ClothList *list) {
+void display_clothes(ClothList *seller) {
     
 }
 

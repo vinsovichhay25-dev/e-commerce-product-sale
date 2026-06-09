@@ -15,7 +15,7 @@
 #include <iostream>
 using namespace std;
 
-void seller_menu(ClothList *list){
+void seller_menu(ClothList *seller){
     int seller_choice;
 
     do{
@@ -37,13 +37,13 @@ void seller_menu(ClothList *list){
         
 
         switch(seller_choice){
-            case 1: add_cloth(list); break;
-            case 2: display_clothes(list); break;
-            case 3: update_cloth(list); break;
-            case 4: delete_cloth(list); break;
-            case 5: search_cloth(list); break;
-            case 6: restock_cloth(list); break;
-            case 7: inventory_report(list, "data/inventory_report.txt"); break;
+            case 1: add_cloth(seller); break;
+            case 2: display_clothes(seller); break;
+            case 3: update_cloth(seller); break;
+            case 4: delete_cloth(seller); break;
+            case 5: search_cloth(seller); break;
+            case 6: restock_cloth(seller); break;
+            case 7: inventory_report(seller, "data/inventory_report.txt"); break;
             case 0: cout<<"\tReturning to Main Menu..."<<endl; break;
             default: cout<<"\tInvalid choice. Please try again."<<endl;
         }

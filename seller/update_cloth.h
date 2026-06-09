@@ -6,8 +6,10 @@
 #include <iostream>
 using namespace std;
 
-void update_cloth(ClothList *list){
+void update_cloth(ClothList *seller){
+ 
     
+    save_to_csv(seller, "data/clothes.csv");
 }
 
 #endif
