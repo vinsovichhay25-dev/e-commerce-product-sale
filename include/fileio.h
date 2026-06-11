@@ -66,7 +66,6 @@ void load_from_csv(ClothList *list, const string &filename) {
         list->tail = newCloth;
         list->size++;
     }
-
     file.close();
 }
 
@@ -96,7 +95,6 @@ void save_to_csv(ClothList *list,const string &filename){
 
         current=current->next;
     }
-
     file.close();
 }
 #endif
