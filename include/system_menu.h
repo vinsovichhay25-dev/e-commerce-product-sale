@@ -44,7 +44,6 @@ void system_menu(ClothList *list){
 
             if(cin.fail()){
                 cout<<"\n\tInvalid input! Please enter a number between 0-8.\n\n";
-
                 cin.clear();
                 cin.ignore(1000, '\n');
                 continue;
@@ -56,7 +55,6 @@ void system_menu(ClothList *list){
                 break;
             }
         }
-        
         switch(user_choice){
             case 1: add_cloth(list); break;
             case 2: display_clothes(list); break;
