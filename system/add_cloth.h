@@ -31,7 +31,8 @@ void add_cloth(ClothList *seller){
             cout<<"\t\nInvalid input! . Please enter a number.\n\n";
             cin.clear();
             cin.ignore(1000, '\n');
-        }else break;
+        }
+        break;
     }
         if(clothQuantity == 0){
             cout<<"\t\nNo cloth is added.\n";
@@ -58,7 +59,8 @@ void add_cloth(ClothList *seller){
                     cout<<"\n\tInvalid input! Price must be an integer and positive.\n\n";
                     cin.clear();
                     cin.ignore(1000, '\n');
-                }else break;
+                }
+                break;
             }
 
             while(true){
@@ -69,7 +71,8 @@ void add_cloth(ClothList *seller){
                     cout<<"\n\tInvalid input! Stock must be a non-negative number and can't be string!\n\n";
                     cin.clear();
                     cin.ignore(1000, '\n');
-                }else break;
+                }
+                break;
             }
 
             while(true){
@@ -84,7 +87,6 @@ void add_cloth(ClothList *seller){
                 }
                 break;
             }
-
             while(true){
                 cout<<"Enter cloth_promotion: "; 
                 cin>>cloth_promotion;
@@ -128,7 +130,6 @@ void add_cloth(ClothList *seller){
             seller->tail = newCloth;
             seller->size++;
         }
-
     save_to_csv(seller, "data/clothes.csv");
 }
 #endif
