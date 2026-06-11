@@ -8,6 +8,6 @@ using namespace std;
 
 void view_cart(ClothList *list){
     
-}
+};
 
 #endif

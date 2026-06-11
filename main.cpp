@@ -1,45 +1,48 @@
-#include "include/menu/seller_menu.h"
-#include "include/menu/customer_menu.h"
+#include "include/system_menu.h"
 #include "include/cloth_info.h"
 #include "include/fileio.h"
 #include <iostream>
 using namespace std;
 
-int main()
-{
-    ClothList *seller = createClothList();
-    ClothList *customer = createClothList();
+int main(){
+    ClothList *list = createClothList();
 
     int user_choice;
-    load_from_csv(seller, "data/clothes.csv");
+    load_from_csv(list, "data/clothes.csv");
 
-    do
-    {
-        cout << "================================================" << endl;
-        cout << "        ONLINE SHOPPING CLOTHES" << endl;
-        cout << "================================================" << endl;
-        cout << "1. Seller Mode \n2. Customer Mode \n0. Exit" << endl;
+    do{
+        cout<<"\n================================================================================================================================\n";
+        cout<<"                                                 WELCOME TO CLOTHING E-COMMERCE SYSTEM\n";
+        cout<<"================================================================================================================================\n\n";
+        
+        cout<<"--------------------------------------------------------------------------------------------------------------------------------\n";
+        cout<<"1. System Menu \n0. Exit\n";
+        cout<<"--------------------------------------------------------------------------------------------------------------------------------\n\n";
 
-        cout << "\nEnter your choice: ";
-        cin >> user_choice;
+        while(true){
+            cout<<"Enter your choice: "; cin>>user_choice;
 
-        switch (user_choice)
-        {
-        case 1:
-            seller_menu(seller);
-            break;
-        case 2:
-            customer_menu(customer);
-            break;
-        case 0:
-            cout << "Exiting the program. Goodbye!" << endl;
-            break;
-        default:
-            cout << "\tInvalid choice. Please try again." << endl;
+            if(cin.fail()){
+                cout<<"\n\tInvalid input! Please enter a number either 1 or 0).\n\n";
+
+                cin.clear();
+                cin.ignore(1000, '\n');
+            }else if(user_choice <0 || user_choice >1){
+                cout<<"\n\tInvalid input! Please enter a number either 1 or 0.\n\n";
+                continue;
+            }else{
+                break;
+            }
         }
-    } while (user_choice != 0);
+        switch(user_choice){
+            case 1: system_menu(list); break;
+            case 0:
+                cout<<"\n\tExiting the program. Goodbye!\n\n";
+                break;
+        }
+    }while(user_choice != 0);
 
-    save_to_csv(seller, "data/clothes.csv");
+    save_to_csv(list, "data/clothes.csv");
 
     return 0;
 }

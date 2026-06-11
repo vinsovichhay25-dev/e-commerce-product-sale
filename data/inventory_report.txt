@@ -1,0 +1,27 @@
+============================== INVENTORY REPORT ===============================
+
+ID      Name                     Brand           Size  Price     Stock   Status
+--------------------------------------------------------------------------------
+C001    Classic T-Shirt          Nike            M     12.99     50      OK
+C002    Slim Fit Jeans           Levi's          L     39.99     35      OK
+C003    Casual Polo Shirt        Ralph Lauren    M     29.99     40      OK
+C004    Sports Hoodie            Adidas          XL    45.5      25      OK
+C005    Formal Shirt             H&M             L     25        60      OK
+C006    Denim Jacket             Zara            M     55.75     20      OK
+C007    Running Shorts           Puma            S     18.99     80      OK
+C008    Wool Sweater             Uniqlo          L     34.99     30      OK
+C009    Summer Dress             Mango           M     28.5      45      OK
+C010    Cargo Pants              Carhartt        XL    42        25      OK
+C011    Graphic Tee              Supreme         S     65        15      OK
+C012    Leather Jacket           Gucci           L     120       10      OK
+C013    Sports Tracksuit         Nike            M     70        22      OK
+C014    Linen Shirt              Uniqlo          S     22.99     55      OK
+C015    Winter Coat              North Face      XL    99.99     18      OK
+123     Polo Shirt               Nike            L     30        0       OUT
+C020    Raksa                    Chhay           L     200       16      OK
+--------------------------------------------------------------------------------
+================================================================================
+                                Total Items      : 17
+                                Low Stock Items  : 0
+                                Out of Stock     : 1
+================================================================================
