@@ -10,8 +10,10 @@ using namespace std;
 void display_clothes(ClothList *list) {
 
     if(list == nullptr || list->head == nullptr){
-        cout<<"\n\tNo clothes available.\n";
+        cout<<"\n\tNo clothes available!";
         return;
+    }else{
+        cout<<"\n\t"<<list->size<<" cloth(s) in inventory.\n";
     }
 
     cout << "\n================================================================================================================================\n";
@@ -47,7 +49,7 @@ void display_clothes(ClothList *list) {
             <<setw(12)<<current->cloth_color
             <<setw(15)<<current->cloth_material
             <<setw(10)<<fixed<<setprecision(2)<<current->cloth_price
-            <<setw(8)<<current->cloth_stock_quantity
+            <<setw(8)<<current->cloth_quantity
             <<setw(8)<<current->cloth_rating
             <<setw(15)<<current->cloth_promotion
             <<endl;
@@ -56,7 +58,6 @@ void display_clothes(ClothList *list) {
     }
 
     cout<<string(128, '-');
-    cout<<"\n\n\n";
 }
 
 #endif

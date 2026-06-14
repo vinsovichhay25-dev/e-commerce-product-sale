@@ -2,6 +2,7 @@
 #define SORT_CLOTHES_H
 
 #include "../include/cloth_info.h"
+#include "display_clothes.h"
 #include <iostream>
 using namespace std;
 
@@ -14,7 +15,7 @@ void swapClothData(ClothInfo *a, ClothInfo *b){
     swap(a->cloth_color, b->cloth_color);
     swap(a->cloth_material, b->cloth_material);
     swap(a->cloth_price, b->cloth_price);
-    swap(a->cloth_stock_quantity, b->cloth_stock_quantity);
+    swap(a->cloth_quantity, b->cloth_quantity);
     swap(a->cloth_rating, b->cloth_rating);
     swap(a->cloth_promotion, b->cloth_promotion);
 }
@@ -22,14 +23,13 @@ void swapClothData(ClothInfo *a, ClothInfo *b){
 void sort_clothes(ClothList *list){
 
     if(list == nullptr || list->head == nullptr){
-        cout << "\nNo data available to sort!\n";
+        cout << "\n\tNo data available to sort!";
         return;
     }
 
     int choice;
-
-    cout<<"\n============================================================ SORT CLOTH OPTIONS ==========================================================================================\n\n";
-    cout<<"---------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+    cout<<"\n================================================== SORTING OPTIONS =============================================================\n\n";
+    cout<<"--------------------------------------------------------------------------------------------------------------------------------\n";
     
     cout << "\t1. Sort by ID (Ascending)\n";
     cout << "\t2. Sort by Name (A-Z)\n";
@@ -38,7 +38,7 @@ void sort_clothes(ClothList *list){
     cout << "\t5. Sort by Stock Quantity (Low-High)\n";
     cout<<"\t0. Back to System's Menu\n";
 
-    cout<<"---------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+    cout<<"--------------------------------------------------------------------------------------------------------------------------------\n";
    
     while(true){
         cout<<"Enter your choice: ";
@@ -69,8 +69,8 @@ void sort_clothes(ClothList *list){
 
             switch(choice){
                 case 1: {
-                    int id1 = stoi(current->cloth_id.substr(1));
-                    int id2 = stoi(current->next->cloth_id.substr(1));
+                    string id1 = current->cloth_id;
+                    string id2 = current->next->cloth_id;
 
                     if(id1 > id2){
                         needSwap = true;
@@ -94,15 +94,14 @@ void sort_clothes(ClothList *list){
                     break;
 
                 case 5:
-                    if(current->cloth_stock_quantity > current->next->cloth_stock_quantity){
+                    if(current->cloth_quantity > current->next->cloth_quantity){
                         needSwap = true;
                     }
                     break;
                 default:
-                    cout<<"\n\tInvalid choice!\n"<<endl;
+                    cout<<"\n\tInvalid choice!";
                     return;
             }
-
             if(needSwap){
                 swapClothData(current, current->next);
                 swapped = true;
@@ -113,7 +112,8 @@ void sort_clothes(ClothList *list){
 
     }while(swapped);
 
-    cout<<"\n\tSorting completed successfully!\n\n";
+    cout<<"\n\tSorting completed successfully!";
+    display_clothes(list);
 }
 
 #endif

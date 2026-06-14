@@ -5,7 +5,7 @@
 #include <string>
 using namespace std;
 
-struct ClothInfo {
+struct ClothInfo{
     string cloth_id;
     string cloth_name;
     string cloth_brand;
@@ -14,7 +14,7 @@ struct ClothInfo {
     string cloth_color;
     string cloth_material;
     float cloth_price;
-    int cloth_stock_quantity;
+    int cloth_quantity;
     float cloth_rating;
     string cloth_promotion;
     ClothInfo *next;

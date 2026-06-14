@@ -2,7 +2,6 @@
 #define DELETE_CLOTH_H
 
 #include "../include/cloth_info.h"
-#include "../include/fileio.h"
 
 #include <iostream>
 using namespace std;
@@ -31,24 +30,23 @@ bool deleteNode(ClothList *list,ClothInfo *current,bool &found_delete){
 
 void delete_cloth(ClothList *list){
     if(list == nullptr || list->head == nullptr){
-        cout<<"No clothes available to delete."<<endl;
+        cout<<"\n\tNo clothes available to delete!";
         return;
     }
-    int seller_choice;
+    int choice;
 
     cout<<"\n============================================== DELETE OPTIONS ==================================================================\n\n";
-    
     cout<<"--------------------------------------------------------------------------------------------------------------------------------\n";
 
     cout<<"\t1. Delete by Cloth ID\n";
     cout<<"\t2. Delete Out-of-Stock Items\n";
-    cout<<"\t3.. Delete by Brand\n";
-    cout<<"0. Back to System Menu\n";
+    cout<<"\t3. Delete by Brand\n";
+    cout<<"\t0. Back to System Menu\n";
 
     cout<<"--------------------------------------------------------------------------------------------------------------------------------\n\n";
 
     while(true){
-        cout<<"Enter your choice: "; cin>>seller_choice;
+        cout<<"Enter your choice: "; cin>>choice;
 
         if(cin.fail()){
             cout<<"\n\tInvalid input! Please enter a number between 0-3.\n\n";
@@ -57,7 +55,7 @@ void delete_cloth(ClothList *list){
             cin.ignore(1000, '\n');
             continue;
         }
-        if(seller_choice < 0 || seller_choice > 4){
+        if(choice < 0 || choice > 4){
             cout<<"\n\tInvalid input! Pleae enter a number betweeen 0-3.\n\n";
             continue;
         }else{  
@@ -67,7 +65,7 @@ void delete_cloth(ClothList *list){
 
     bool found_delete = false;
 
-    switch(seller_choice){
+    switch(choice){
         case 1:{
             string delete_id;
             cout<<"Enter cloth ID: ";
@@ -78,13 +76,12 @@ void delete_cloth(ClothList *list){
             while(current != nullptr){
                 if(current->cloth_id == delete_id){
                     deleteNode(list, current, found_delete);
-                    cout<<"\n\tCloth deleted successfully.\n\n";
-                    save_to_csv(list, "data/clothes.csv");
+                    cout<<"\n\tCloth deleted successfully.";
                     return;
                 }
                 current = current->next;
             }
-            cout<<"Cloth ID not found.\n";
+            cout<<"\n\tCloth ID not found.\n\n";
             break;
         }
         case 2:{
@@ -94,17 +91,16 @@ void delete_cloth(ClothList *list){
 
                 ClothInfo *nextNode = current->next;
 
-                if(current->cloth_stock_quantity<=0){
+                if(current->cloth_quantity<=0){
                     deleteNode(list, current, found_delete);
                 }
                 current = nextNode;
             }
 
             if(found_delete){
-                cout<<"\n\tOut-of-stock items deleted.\n\n";
-                save_to_csv(list, "data/clothes.csv");
+                cout<<"\n\tOut-of-stock items deleted.";
             }else{
-                cout<<"\n\tNo out-of-stock items found.\n\n";
+                cout<<"\n\tNo out-of-stock items found.";
             }
             break;
         }
@@ -127,16 +123,15 @@ void delete_cloth(ClothList *list){
                 current = nextNode;
             }
             if(found_delete){
-                cout<<"\n\tAll clothes from brand deleted.\n\n";
-                save_to_csv(list,"data/clothes.csv");
+                cout<<"\n\tAll clothes from brand deleted.";
             }else{
-                cout<<"\n\tNo clothes found for brand.\n\n";
+                cout<<"\n\tNo clothes found for brand.";
             }
             break;
         }
 
         case 0:{
-            cout<<"\n\tReturning to Seller Menu...\n\n";
+            cout<<"\n\tReturning to Seller Menu...";
             return;
         }
     }

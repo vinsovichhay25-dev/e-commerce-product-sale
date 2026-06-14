@@ -42,46 +42,50 @@ void display_cloth(ClothInfo *cloth){
          <<setw(12)<<cloth->cloth_color
          <<setw(15)<<cloth->cloth_material
          <<setw(10)<<fixed<<setprecision(2)<<cloth->cloth_price
-         <<setw(8)<<cloth->cloth_stock_quantity
+         <<setw(8)<<cloth->cloth_quantity
          <<setw(8)<<cloth->cloth_rating
          <<setw(15)<<cloth->cloth_promotion
          <<endl;
 }
 void search_cloth(ClothList *list){
     
-    int seller_choice;
+    int choice;
     bool isFound = false;
 
-    
-    cout<<"\n============================================================ SEARCH OPTIONS ========================================================================================\n\n";
-    cout<<"---------------------------------------------------------------------------------------------------------------------------------------------------------------------\n";
+    if(list == nullptr || list->head == nullptr){
+        cout<<"\n\tNo clothes available!";
+        return;
+    }
+
+    cout<<"\n================================================ SEARCH OPTIONS ==========================================================\n\n";
+    cout<<"--------------------------------------------------------------------------------------------------------------------------------\n";
 
     cout<<"\t1. Search by Cloth ID \n";
     cout<<"\t2. Search by Brand \n";
     cout<<"\t3. Search by Price range\n";
     cout<<"\t0. Back to System's Menu\n";
-    cout<<"---------------------------------------------------------------------------------------------------------------------------------------------------------------------\n\n";
+    cout<<"--------------------------------------------------------------------------------------------------------------------------------\n";
 
     while(true){
 
         cout<<"Enter your choice: "; 
-        cin>>seller_choice;
+        cin>>choice;
 
         if(cin.fail()){
-            cout<<"\n\tInvalid input! Please enter a number between 0-3.\n";
+            cout<<"\n\tInvalid input! Please enter a number between 0-3.\n\n";
             
             cin.clear();
             cin.ignore(1000, '\n');
             continue;
         }
-        if(seller_choice < 0 || seller_choice > 11){
-            cout<<"\n\tInvalid input! Please enter a number between 0-3.\n";
+        if(choice < 0 || choice > 3){
+            cout<<"\n\tInvalid input! Please enter a number between 0-3.\n\n";
             continue;
         }else{
             break;
         }
     }
-    switch(seller_choice){
+    switch(choice){
         case 1: {
             string id;
             bool idFound = false;
@@ -91,14 +95,14 @@ void search_cloth(ClothList *list){
 
             while(current != nullptr){
                 if(current->cloth_id == id){
-                    cout<<"\n\tCloth's ID is found!\n";
+                    cout<<"\n\tCloth's ID is found!";
                     idFound = true;
                     break;
                 }
                 current = current->next;
             }
             if(!idFound){
-                cout<<"\n\tCloth's ID is not found!\n";
+                cout<<"\n\tCloth's ID is not found!";
                 return;
             }
 
@@ -112,7 +116,7 @@ void search_cloth(ClothList *list){
                 current = current->next;
             }
             
-            cout<<string(165,'-')<<endl<<endl<<endl;
+            cout<<string(128,'-')<<endl<<endl<<endl;
             break;
         }
         case 2: {
@@ -124,14 +128,14 @@ void search_cloth(ClothList *list){
 
             while(current != nullptr){
                 if(current->cloth_brand == brand){
-                    cout<<"\n\tCloth's Brand is found!\n";
+                    cout<<"\n\tCloth's Brand is found!";
                     brandFound = true;
                     break;
                 }
                 current = current->next;
             }
             if(!brandFound){
-                cout<<"\n\tCloth's Brand is not found!\n";
+                cout<<"\n\tCloth's Brand is not found!";
                 return;
             }
 
@@ -144,7 +148,7 @@ void search_cloth(ClothList *list){
                 }
                 current = current->next;
             }
-            cout<<string(165,'-')<<endl<<endl<<endl;
+            cout<<string(128,'-')<<endl<<endl<<endl;
             break;
         }
         case 3: {
@@ -156,13 +160,13 @@ void search_cloth(ClothList *list){
                 cin>>minPrice;
 
                 if(cin.fail()){
-                    cout<<"\n\tInvalid input! Enter a number.\n\n";
+                    cout<<"\n\tInvalid input! Please enter an integer number.";
                     cin.clear();
                     cin.ignore(1000, '\n');
                     continue;
                 }
                 if(minPrice<0){
-                    cout<<"\n\tPrice cannot be negative!\n\n";
+                    cout<<"\n\tPrice cannot be negative!";
                     continue;
                 }else{
                     break;
@@ -179,7 +183,7 @@ void search_cloth(ClothList *list){
                     continue;
                 }
                 if(maxPrice<0){
-                    cout<<"\n\tPrice cannot be negative!\n\n";
+                    cout<<"\n\tPrice cannot be negative!";
                     continue;
                 }else{
                     break;
@@ -187,13 +191,13 @@ void search_cloth(ClothList *list){
             }
 
             if(minPrice > maxPrice){
-                cout<<"\n\tInvalid range! Minimum price cannot be greater than maximum price.\n";
+                cout<<"\n\tInvalid range! Minimum price cannot be greater than maximum price.";
                 break;
             }
 
             ClothInfo *current = list->head;
 
-            cout<<"\n\tClothes between "<<minPrice<< " and " <<maxPrice<< ":\n\n";
+            cout<<"\n\tClothes between "<<minPrice<< " and " <<maxPrice<< ":";
 
             while(current != nullptr){
                 if(current->cloth_price >= minPrice && current->cloth_price <= maxPrice){
@@ -203,7 +207,7 @@ void search_cloth(ClothList *list){
                 current = current->next;
             }
             if (!priceFound) {
-                cout<<"\n\tNo clothes found in this price range.\n";
+                cout<<"\n\tNo clothes found in this price range.";
                 return;
             }            
             
@@ -221,7 +225,7 @@ void search_cloth(ClothList *list){
             break;
         }
         case 0: {
-            cout<<"\t\nReturning to the Seller's Menu...\n";
+            cout<<"\t\nReturning to the Seller's Menu...";
             break;
         }   
     }
