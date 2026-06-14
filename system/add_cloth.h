@@ -30,7 +30,10 @@ void add_cloth(ClothList *list){
             cout<<"\n\tInvalid input! Please enter an integer number.\n";
             cin.clear();
             cin.ignore(1000, '\n');
+<<<<<<< HEAD
             continue;
+=======
+>>>>>>> 65351bfbd1dc82d9741f93d6b1493110571125c0
         }
         break;
     }
@@ -56,6 +59,7 @@ void add_cloth(ClothList *list){
             cout<<"Enter cloth_price: "; 
             cin>>cloth_price;
 
+<<<<<<< HEAD
             if(cin.fail() || cloth_price <= 0){
                 cout<<"\n\tInvalid input! Price must be an integer and positive.\n";
                 cin.clear();
@@ -134,5 +138,83 @@ void add_cloth(ClothList *list){
         list->tail = newCloth;
         list->size++;
     }
+=======
+                if(cin.fail() || cloth_price <= 0){
+                    cout<<"\n\tInvalid input! Price must be an integer and positive.\n\n";
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                }
+                break;
+            }
+
+            while(true){
+                cout<<"Enter cloth_stock_quantity: "; 
+                cin>>cloth_stock_quantity;
+
+                if(cin.fail() || cloth_stock_quantity <= 0){
+                    cout<<"\n\tInvalid input! Stock must be a non-negative number and can't be string!\n\n";
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                }
+                break;
+            }
+
+            while(true){
+                cout<<"Enter cloth_rating: ";          
+                cin>>cloth_rating;
+
+                if(cin.fail() || cloth_rating <= 0 || cloth_rating > 5){
+                    cout<<"\n\tInvalid input! Rate can't be string and has to be between 0.0 and 5.0\n\n";
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    continue;
+                }
+                break;
+            }
+            while(true){
+                cout<<"Enter cloth_promotion: "; 
+                cin>>cloth_promotion;
+
+                if(cin.fail()) {
+                    cout<<"\n\tInvalid input! Please enter a number (e.g. 10%, 15%, 20%).\n\n";
+                    cin.clear();
+                    cin.ignore(1000, '\n');
+                    continue;
+                }
+                if(cloth_promotion == "None"){
+                    break;
+                }
+                if(cloth_promotion.back() != '%') {
+                    cout<<"\n\tInvalid format! Use % symbol.\n\n";
+                    continue;
+                }
+                break;
+            }
+
+            newCloth->cloth_id = cloth_id;
+            newCloth->cloth_name = cloth_name;
+            newCloth->cloth_brand = cloth_brand;
+            newCloth->cloth_category = cloth_category;
+            newCloth->cloth_size = cloth_size;
+            newCloth->cloth_color = cloth_color;
+            newCloth->cloth_material = cloth_material;
+            newCloth->cloth_price = cloth_price;
+            newCloth->cloth_stock_quantity = cloth_stock_quantity;
+            newCloth->cloth_rating = cloth_rating;
+            newCloth->cloth_promotion = cloth_promotion;
+
+            newCloth->next = nullptr;
+            newCloth->prev = seller->tail;
+
+            if(seller->tail != nullptr){
+                seller->tail->next = newCloth; 
+            }else{
+                seller->head = newCloth;
+            }
+            seller->tail = newCloth;
+            seller->size++;
+        }
+    save_to_csv(seller, "data/clothes.csv");
+>>>>>>> 65351bfbd1dc82d9741f93d6b1493110571125c0
 }
 #endif
