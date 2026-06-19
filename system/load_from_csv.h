@@ -68,34 +68,5 @@ void load_from_csv(ClothList *list, const string &filename) {
     file.close();
 }
 
-
-<<<<<<< HEAD:system/load_from_csv.h
 #endif
-=======
-    if(!file.is_open()){
-        cout<<"Error opening file: "<<filename<<endl;
-        return;
-    }
 
-    ClothInfo *current = list->head;
-
-    while(current!=nullptr){
-        file<<current->cloth_id<<","
-            <<current->cloth_name<<","
-            <<current->cloth_brand<<","
-            <<current->cloth_category<<","
-            <<current->cloth_size<<","
-            <<current->cloth_color<<","
-            <<current->cloth_material<<","
-            <<current->cloth_price<<","
-            <<current->cloth_stock_quantity<<","
-            <<current->cloth_rating<<","
-            <<current->cloth_promotion
-            <<endl;
-
-        current=current->next;
-    }
-    file.close();
-}
-#endif
->>>>>>> 65351bfbd1dc82d9741f93d6b1493110571125c0:include/fileio.h

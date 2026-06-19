@@ -10,6 +10,7 @@
 #include "system/sort_clothes.h"
 #include "system/update_cloth.h"
 #include "system/view_cart.h"
+#include "system/inventory_report.h"
 
 #include "include/cloth_info.h"
 
@@ -47,6 +48,7 @@ int main(){
         cout<<"10. Check out"<<endl;
         cout<<"11. Load Clothes from CSV"<<endl;
         cout<<"12. Save Clothes to CSV"<<endl;
+        cout<<"13. Inventory Report"<<endl;
         cout<<"0. Exit program"<<endl;
         cout<<"--------------------------------------------------------------------------------------------------------------------------------\n";
 
@@ -55,14 +57,14 @@ int main(){
             cin>>user_choice;
 
             if(cin.fail()){
-                cout<<"\n\tInvalid input! Please enter a number between 0-12.\n\n";
+                cout<<"\n\tInvalid input! Please enter a number between 0-13.\n\n";
 
                 cin.clear();
                 cin.ignore(1000, '\n');
                 continue;
             }
-            if(user_choice < 0 || user_choice > 12){
-                cout<<"\n\tInvalid input! Please enter a number between 0-12.\n\n";
+            if(user_choice < 0 || user_choice > 13){
+                cout<<"\n\tInvalid input! Please enter a number between 0-13.\n\n";
                 continue;
             }else{
                 break;
@@ -81,9 +83,10 @@ int main(){
             case 10: checkout(list, cart); break;
             case 11: load_from_csv(list, "data/clothes.csv"); break;
             case 12: save_to_csv(list, "data/clothes.csv"); break;
+            case 13: inventory_report(list, "data/report_clothes.txt"); break;
             case 0: cout<<"\n\tExit Program!\n\n"; break;
         }
     }while(user_choice != 0);
-
+    
     return 0;
 }

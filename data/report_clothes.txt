@@ -1,0 +1,19 @@
+============================ INVENTORY REPORT ===========================
+
+ID        Name                Brand          Price     Stock     Rating    
+-----------------------------------------------------------------------
+C008      Coat                North Face     89.99     12        4.9       
+C003      Hoodie              Adidas         35.5      25        4.6       
+C005      Jacket              Zara           55        18        4.8       
+C002      Jeans               Levi's         45.99     30        4.7       
+C009      Polo                Nike           24.99     35        4.5       
+C004      Shirt               H&M            20        60        4.3       
+C006      Shorts              Puma           18.99     50        4.4       
+C007      Sweater             Uniqlo         32.99     22        4.6       
+C001      Tshirt              Nike           15.99     40        4.5       
+-----------------------------------------------------------------------
+
+Total Products: 9
+Total Stock: 292
+
+============================ END OF REPORT ==============================

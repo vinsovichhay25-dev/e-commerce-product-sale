@@ -1,10 +1,7 @@
-C011,Chhay,Mary,Pheng,XL,Black,Cotton,50,7,5,None
 C008,Coat,North Face,Coat,XL,Navy,Wool,89.99,12,4.9,22%
-C003,Hoodie,Adidas,Hoodie,XL,Gray,Cotton,35.5,25,4.6,20%
 C005,Jacket,Zara,Jacket,M,Black,Polyester,55,18,4.8,18%
-C002,Jeans,Levi's,Jeans,L,Blue,Denim,45.99,30,4.7,15%
-C009,Polo,Nike,Polo,L,Green,Cotton,24.99,35,4.5,10%
-C004,Shirt,H&M,Shirt,S,White,Cotton,20,60,4.3,12%
-C006,Shorts,Puma,Shorts,L,Red,Polyester,18.99,50,4.4,8%
 C007,Sweater,Uniqlo,Sweater,M,Beige,Wool,32.99,22,4.6,25%
-C001,Tshirt,Nike,Tshirt,M,Black,Cotton,15.99,40,4.5,10%
+C003,Hoodie,Adidas,Hoodie,XL,Gray,Cotton,35.5,25,4.6,20%
+C002,Jeans,Levi's,Jeans,L,Blue,Denim,45.99,30,4.7,15%
+C006,Shorts,Puma,Shorts,L,Red,Polyester,18.99,50,4.4,8%
+C004,Shirt,H&M,Shirt,S,White,Cotton,20,35,4.3,12%
